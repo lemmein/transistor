@@ -18,7 +18,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Vibrator
 import android.support.v4.media.session.PlaybackStateCompat
-import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,7 +28,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
 import androidx.cardview.widget.CardView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.core.net.toUri
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
@@ -252,6 +250,7 @@ class CollectionAdapter(private val context: Context, private val collectionAdap
         }
     }
 
+
     /* Displays station popup menu */
     private fun showStationPopupMenu(view: View, stationUuid: String, position: Int) {
         val popup = PopupMenu(context, view)
@@ -294,7 +293,7 @@ class CollectionAdapter(private val context: Context, private val collectionAdap
                     intent.type = "text/plain";
                     intent.putExtra(Intent.EXTRA_SUBJECT, station.name);
                     intent.putExtra(Intent.EXTRA_TEXT, station.getStreamUri());
-                    context.startActivity(Intent.createChooser(intent, "Share sound stream"));
+                    context.startActivity(Intent.createChooser(intent, "Share stream location:"));
                     true
                 }
                 else -> false

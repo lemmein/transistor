@@ -36,7 +36,7 @@
 
     <item
         android:id="@+id/menu_share"
-        android:title="Share"
+        android:title="Share stream location"
         android:orderInCategory="100"
         app:showAsAction="never" />
 
