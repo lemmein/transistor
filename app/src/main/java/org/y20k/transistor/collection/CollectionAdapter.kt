@@ -285,6 +285,16 @@ class CollectionAdapter(private val context: Context, private val collectionAdap
                     ShortcutHelper.placeShortcut(context, station)
                     true
                 }
+                R.id.menu_share -> {
+                    // share station URI
+                    val station: Station = CollectionHelper.getStation(collection, stationUuid)
+                    val intent = Intent(Intent.ACTION_SEND)
+                    intent.type = "text/plain";
+                    intent.putExtra(Intent.EXTRA_SUBJECT, station.name);
+                    intent.putExtra(Intent.EXTRA_TEXT, station.getStreamUri());
+                    context.startActivity(Intent.createChooser(intent, "Share stream location:"));
+                    true
+                }
                 else -> false
             }
         }
