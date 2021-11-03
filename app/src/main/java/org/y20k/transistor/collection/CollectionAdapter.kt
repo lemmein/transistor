@@ -15,6 +15,7 @@
 package org.y20k.transistor.collection
 
 import android.content.Context
+import android.content.Intent
 import android.os.Vibrator
 import android.support.v4.media.session.PlaybackStateCompat
 import android.view.LayoutInflater
